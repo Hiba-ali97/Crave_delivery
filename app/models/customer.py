@@ -30,8 +30,3 @@ class CustomerCreate(BaseModel):
     location_lat: float
     location_lng: float
     location_address: str
-
-
-class LoginCredentials(BaseModel):
-    phone_number: str
-    password: str

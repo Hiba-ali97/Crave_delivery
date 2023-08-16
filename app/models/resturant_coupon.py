@@ -4,7 +4,7 @@ from app.core.config import Base
 from pydantic import BaseModel
 
 # Create the database model
-class ResturantCoupon(Base):
+class RestaurantCoupon(Base):
     __tablename__ = 'resturant_coupon'
 
     id_resturant_coupon =Column(types.BigInteger, primary_key=True, index=True,autoincrement=True,nullable=False)
@@ -13,6 +13,6 @@ class ResturantCoupon(Base):
     created_at=Column(types.DateTime , server_default=func.current_timestamp(), index=True,nullable=False)
     updated_at=Column(types.DateTime , server_default=func.current_timestamp(),onupdate=func.current_timestamp(),nullable=False)
 
-class ResturantCouponCreate(BaseModel):
-    id_resturant:int
+class RestaurantCouponCreate(BaseModel):
+    id_restaurant:int
     id_coupon:int

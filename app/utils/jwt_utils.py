@@ -6,10 +6,10 @@ import secrets
 SECRET_KEY = secrets.token_hex(32)
 
 
-def generate_jwt(customer_id: int) -> str:
+def generate_jwt(user_id: int) -> str:
     # Define the payload containing the data you want to include in the JWT
     payload = {
-        "customer_id": customer_id,
+        "user_id": user_id,
         "exp": datetime.utcnow() + timedelta(hours=24)  # Set the expiration time
     }
 

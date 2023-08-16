@@ -12,12 +12,12 @@ class DatabaseConnectionError(Exception):
 class DatabaseInsertionError(Exception):
     """Exception raised when an error occurs during database insertion."""
 
-    def __init__(self, message="An error occurred while adding the customer to the database"):
+    def __init__(self, message="An error occurred while adding the user to the database"):
         self.message = message
         super().__init__(self.message)
 
 
-class CustomerValidationError(HTTPException):
+class UserValidationError(HTTPException):
     """HTTPException raised due to invalid information."""
 
     def __init__(
@@ -35,9 +35,9 @@ class CustomerValidationError(HTTPException):
         
         super().__init__(status_code=self.status_code, detail=self.detail)
 
-class CustomerNotFoundError(Exception):
-    """Exception raised when the customer is not found"""
-    def __init__(self, message="The customer is not found"):
+class UserNotFoundError(Exception):
+    """Exception raised when the customer/partner is not found"""
+    def __init__(self, message="The User is not found"):
         self.message = message
         super().__init__(self.message)
   
@@ -46,3 +46,10 @@ class InvalidLoginError(Exception):
     def __init__(self, message="An error occurred while login due to Invalid username or password"):
         self.message = message
         super().__init__(self.message)
+
+class InvalidUserTypeError(Exception):
+    """Exception raised when the customer/partner is not found"""
+    def __init__(self, message="Invalid user type"):
+        self.message = message
+        super().__init__(self.message)
+  

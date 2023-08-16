@@ -26,5 +26,5 @@ def get_db():
         )
         return mydb
     except mysql.connector.Error as error:
-        raise DatabaseConnectionError("Failed to connect to the database.")
+        raise DatabaseConnectionError()
 
